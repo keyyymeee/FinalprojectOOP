@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather in Ireland</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+      .container {
+        position: relative;
+        text-align: center;
+        color: white;
+        }
+
+        .centered-weather{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        font-size: 50px;   
+        }
+
+        .centered-title {
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        }
+        .centered-option {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+        .centered-button {
+        position: absolute;
+        top: 30%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        }
+        .centered-info {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        .button {
+        position: relative;
+        background-color: #04AA6D;
+        border: none;
+        font-size: 28px;
+        color: #FFFFFF;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        }
+
+        .button:after {
+        content: "";
+        background: #90EE90;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px!important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+        }
+
+        .button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="text-align: center;">
+        <img src="media/pexels-steven-hylands-1650882.jpg" alt="" style="width: 100%;filter: brightness(50%);">
+        <center><h1 class="centered-weather ">Weather In Ireland</h1></center>
+        <label class="centered-title" for="city">Select a city:</label>
+        <select class="centered-option" id="city">
+            <option value="Dublin">Dublin</option>
+            <option value="Cork">Cork</option>
+            <option value="Galway">Galway</option>
+            <option value="Limerick">Limerick</option>
+            <option value="Waterford">Waterford</option>
+        </select>
+        <button class="centered-button" onclick="getWeather()">Get Weather</button>
+        <div class="centered-info" id="weather"></div>
+    </div>
+    <script src="functions.js"></script>
+  </body>
+</html>
